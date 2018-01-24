@@ -1,3 +1,35 @@
+ul {
+  margin: 0 !important;
+  list-style-type: none !important;
+}
+
+li {
+  margin: 4px 0 !important;
+}
+
+.mdl-layout-title {
+  font-weight: 600 !important;
+}
+
+.mdl-layout__header {
+  color: rgb(66,66,66) !important;
+  background-color: white !important;
+
+}
+
+.mdl-navigation__link {
+   color: rgb(66, 66, 66) !important;
+}
+
+.mdl-navigation__link:hover {
+  background-color: #ffc107 !important;
+  color: rgb(255,255,255) !important;
+}
+
+/*a {
+  color: #F08C27 !important;
+}*/
+
 img {
   width: 100%;
 }

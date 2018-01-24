@@ -75,11 +75,11 @@ html, body {
   width: 100%;
 }
 
-.demo-navigation {
+/*.demo-navigation {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-}
+}*/
 .demo-layout .demo-navigation .mdl-navigation__link {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
@@ -93,10 +93,10 @@ html, body {
   color: rgba(255, 255, 255, 0.56);
   font-weight: 500;
 }
-.demo-layout .demo-navigation .mdl-navigation__link:hover {
+/*.demo-layout .demo-navigation .mdl-navigation__link:hover {
   background-color: #00BCD4;
   color: #37474F;
-}
+}*/
 .demo-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;
   color: rgba(255, 255, 255, 0.56);
@@ -176,12 +176,12 @@ _:-ms-input-placeholder, :root .demo-graph {
 .demo-cards h3 {
   font-size: 1em;
 }
-.demo-updates .mdl-card__title {
+/*.demo-updates .mdl-card__title {
   min-height: 200px;
   background-image: url('images/dog.png');
   background-position: 90% 100%;
   background-repeat: no-repeat;
-}
+}*/
 .demo-cards .mdl-card__actions a {
   color: #00BCD4;
   text-decoration: none;
