@@ -1,3 +1,19 @@
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.padding-bottom-none {
+  padding-bottom: 0px !important;
+}
+
+.padding-top-none {
+  padding-top: 0px !important;
+}
+
+.min-height-150 {
+  min-height: 150px !important;
+}
+
 ul {
   margin: 0 !important;
   list-style-type: none !important;
@@ -21,7 +37,7 @@ li {
    color: rgb(66, 66, 66) !important;
 }
 
-.mdl-navigation__link:hover {
+.navigation-active, .mdl-navigation__link:hover {
   background-color: #ffc107 !important;
   color: rgb(255,255,255) !important;
 }
