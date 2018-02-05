@@ -38,7 +38,7 @@ li {
 }
 
 .navigation-active, .mdl-navigation__link:hover {
-  background-color: #ffc107 !important;
+  background-color: #FF9800 !important;
   color: rgb(255,255,255) !important;
 }
 
