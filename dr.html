@@ -76,7 +76,7 @@
             <div class="demo-cards mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
                 <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop min-height-150">
                     <div class="margin-top-30 padding-bottom-none ">
-                        <p class="mdl-card__supporting-text padding-bottom-none"> Total energy you've saved </p>
+                        <p class="mdl-card__supporting-text padding-bottom-none"> Total peak energy you've saved </p>
                     
                         <h2 class="mdl-card__title mdl-color-text--orange-800 mdl-card__title-text padding-top-none"> 434 kW</h2>
                     </div>
@@ -237,14 +237,14 @@
             <div class="mdl-card__supporting-text ">
                 <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="notification-1">
                     <input type="checkbox" id="notification-1" class="mdl-checkbox__input">
-                    <span >Notify me when demand > 200 kW.</span>
+                    <span >Notify me when demand exceeds 1230 kW.</span>
                 </label>
 
             </div>
             <div class="mdl-card__supporting-text ">
                 <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="notification-2">
                     <input type="checkbox" id="notification-2" class="mdl-checkbox__input">
-                    <span >Notify me when cost > $1,200.</span>
+                    <span >Notify me when billed energy consumption this month exceeds $340.</span>
                 </label>
             </div>
           
@@ -304,11 +304,12 @@
                 '8p',
                 '9p',
                 '10p',
-                '11p'
+                '11p',
+                '12p'
             ],
             plotBands: [{ // visualize the weekend
-                from: 9,
-                to: 16,
+                from: 14,
+                to: 18,
                 color: '#F1F8E9'
             }]
         },
@@ -335,11 +336,11 @@
         series: [{
             name: 'Current Energy Usage',
             color: '#AED581',
-            data: [3, 4, 3, 5, 4, 10, 12, 13, 14, 13, 15, 14, 10, 12, 16, 17, 19, 16, 18, 15, 17, 23, 21, 21]
+            data: [3, 4, 3, 5, 4, 10, 12, 13, 14, 13, 15, 14, 10, 12, 16, 17, 19, 16, 18, 15, 17, 23, 21, 21, 18]
         }, {
             name: 'Recommended Energy Usage',
             color: '#8BC34A',
-            data: [2, 3, 3, 3, 2, 8, 11, 11, 12, 10, 12, 13, 7, 10, 13, 13, 15, 15, 16, 14, 13, 20, 17, 19]
+            data: [2, 3, 3, 3, 2, 8, 11, 11, 12, 10, 12, 13, 7, 10, 13, 13, 15, 15, 16, 14, 13, 20, 17, 19, 17]
         }]
     });
             

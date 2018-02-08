@@ -52,108 +52,132 @@
 
   </head>
   <body>
-    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+    <div class="demo-layout mdl-layout mdl-js-layout">
+
+      <header class="demo-header mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Schedule Set Up</span>
-          
-        </div> 
-      </header>
-      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="demo-drawer-header">
-          <img src="images/user.jpg" class="demo-avatar">
-          <div class="demo-avatar-dropdown">
-            <span>Connor Clark</span>
-            <div class="mdl-layout-spacer"></div>
-            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-              <i class="material-icons" role="presentation">arrow_drop_down</i>
-              <span class="visuallyhidden">Accounts</span>
-            </button>
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-              <li class="mdl-menu__item">Connor Clark</li>
-              <li class="mdl-menu__item">info@example.com</li>
-              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
-            </ul>
-          </div>
-        </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href="index.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-          <a class="mdl-navigation__link" href="schedule.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">date_range</i>Schedule</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report_problem</i>Alert</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">insert_chart</i>Report</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings</i>Configuration</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Users</a>
+          <span class="mdl-layout-title">XBOS-DR</span>
           <div class="mdl-layout-spacer"></div>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
-        </nav>
-      </div>
+
+          <nav class="demo-navigation mdl-navigation">
+            <a class="mdl-navigation__link" href="index.html">Home</a>
+            <a class="mdl-navigation__link navigation-active" href="schedule_floorplan.html">Schedule</a>
+            <a class="mdl-navigation__link" href="">Alert</a>
+            <a class="mdl-navigation__link" href="">Report</a>
+            <a class="mdl-navigation__link" href="dr.html">Demand Response</a>
+            <a class="mdl-navigation__link" href="">Configuration</a>
+            <a class="mdl-navigation__link" href="">Users</a>
+            
+          </nav>
+        </div>
+      </header>
+
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid schedule-title">
-          <h4>What equipment are you controlling?</h4>
+          <h4> What equipment are you controlling?</h4>
         </div>
-        <div class="mdl-grid demo-content">
-          <ul class="mdl-list margin-left-3rem">
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content padding-right-10">
-                <i class="material-icons  mdl-list__item-avatar setup-icon">toys</i>
-                HVAC
-              </span>
+        <div class="mdl-grid demo-content">  
+          <div class="schedule-set-up mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-card--expand mdl-color--light-green-600">
+              
+              <h4 class="mdl-card__title-text"><i class="material-icons  mdl-list__item-avatar mdl-color--light-green-600">toys</i>HVAC</h4>
+
+            </div>
+            <div class="mdl-card__supporting-text">
+                    <!-- <span class="mdl-list__item-primary-content padding-right-10">
+                      <i class="material-icons  mdl-list__item-avatar setup-icon">toys</i>
+                      HVAC
+                    </span> -->
+                    <span class="mdl-list__item-secondary-action">
+                      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="toggle-hvac">
+                        <input type="checkbox" id="toggle-hvac" class="mdl-switch__input" />
+                      </label>
+                    </span>
+                    <span class="mdl-list__item-secondary-action">
+                      <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="thermostats">
+                          <label class="mdl-textfield__label" for="thermostats">How many thermostats?</label>
+                          <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                      </form>
+                    </span>
+            </div>
+          </div>
+
+
+          <div class="schedule-set-up mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-card--expand mdl-color--light-green-600">
+              
+              <h4 class="mdl-card__title-text"> <i class="material-icons  mdl-list__item-avatar mdl-color--light-green-600">lightbulb_outline</i>
+                      Lighting</h4>
+
+            </div>
+            <div class="mdl-card__supporting-text">
+                    <!-- <span class="mdl-list__item-primary-content padding-right-10">
+                      <i class="material-icons  mdl-list__item-avatar setup-icon">toys</i>
+                      HVAC
+                    </span> -->
+                    <span class="mdl-list__item-secondary-action">
+                      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="toggle-hvac">
+                        <input type="checkbox" id="toggle-hvac" class="mdl-switch__input" />
+                      </label>
+                    </span>
+                    <span class="mdl-list__item-secondary-action">
+                      <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="lights">
+                          <label class="mdl-textfield__label" for="lights">How many lights?</label>
+                          <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                      </form>
+                    </span>
+            </div>
+          </div>
+
+          <div class="schedule-set-up mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-card--expand mdl-color--light-green-600">
+              
+              <h4 class="mdl-card__title-text"> <i class="material-icons  mdl-list__item-avatar   mdl-color--light-green-600">settings_input_component</i>
+                      Plugload</h4>
+
+            </div>
+            <div class="mdl-card__supporting-text">
+                    <!-- <span class="mdl-list__item-primary-content padding-right-10">
+                      <i class="material-icons  mdl-list__item-avatar setup-icon">toys</i>
+                      HVAC
+                    </span> -->
               <span class="mdl-list__item-secondary-action">
                 <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="toggle-hvac">
                   <input type="checkbox" id="toggle-hvac" class="mdl-switch__input" />
                 </label>
               </span>
-            </li>
-            <li class="mdl-list__item">
-              <!-- <span class="mdl-list__item-primary-content padding-right-10">
-                <i class="material-icons  mdl-list__item-avatar setup-icon">toys</i>
-                HVAC
-              </span> -->
               <span class="mdl-list__item-secondary-action">
                 <form action="#">
                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="thermostats_quantity">
-                    <label class="mdl-textfield__label" for="sample4">How many thermostats?</label>
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="plugload">
+                    <label class="mdl-textfield__label" for="plugload">How many plugloads?</label>
                     <span class="mdl-textfield__error">Input is not a number!</span>
                   </div>
                 </form>
               </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content padding-right-10">
-                <i class="material-icons  mdl-list__item-avatar setup-icon">lightbulb_outline</i>
-                Lighting
-              </span>
-              <span class="mdl-list__item-secondary-action">
-                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="toggle-light">
-                  <input type="checkbox" id="toggle-light" class="mdl-switch__input" />
-                </label>
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content padding-right-10">
-                <i class="material-icons  mdl-list__item-avatar  setup-icon">settings_input_component</i>
-                Plugload
-              </span>
-              <span class="mdl-list__item-secondary-action">
-                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="toggle-plugload">
-                  <input type="checkbox" id="toggle-plugload" class="mdl-switch__input" />
-                </label>
-              </span>
-            </li>
-          </ul>
-        
+            </div>
+          </div>
         </div>
 
-        <div class="mdl-grid demo-content setup-button">  
+        <div class="mdl-grid demo-content"> 
           <div class="padding-right-10">
-            <a href="schedule_floorplan.html"> <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored " >Previous</button></a>
-
+              <!-- Colored raised button -->
+              <a href="schedule_floorplan.html"> <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--light-green-600 mdl-color-text--white">
+                Previous
+              </button></a>
+            </div> 
+          <div class="">
+            <!-- Colored raised button -->
+            <a href="schedule_types.html"> <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--light-green-600 mdl-color-text--white">
+              Next
+            </button></a>
           </div>
-          <div class="padding-right-10">
-            <a href="schedule_types.html"> <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Next</button></a>
-          </div>
-          
         </div>
       </main>
     </div>
