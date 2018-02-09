@@ -1,3 +1,11 @@
+.margin-left-30 {
+  margin-left: 30px;
+}
+.mdl-list_item-sub-title-2 {
+      text-align: right !important;
+    margin-top: -18px !important;
+}
+
 .mdl-checkbox {
     height: auto !important;
 }
