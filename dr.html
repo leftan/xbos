@@ -49,16 +49,18 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-blue.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="mystyle.css">
+        <link rel="stylesheet" href="css/weather.css">
+    <link rel="stylesheet" href="fonts/artill_clean_icons.otf">
 
   </head>
   <body>
     <div class="demo-layout mdl-layout mdl-js-layout">
       <header class="demo-header mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">XBOS-DR</span>
-          <div class="mdl-layout-spacer"></div>
+            <span class="mdl-layout-title">XBOS-DR</span>
+            <div class="mdl-layout-spacer"></div>
 
-          <nav class="demo-navigation mdl-navigation">
+            <nav class="demo-navigation mdl-navigation">
             <a class="mdl-navigation__link" href="index.html">Home</a>
             <a class="mdl-navigation__link" href="schedule_floorplan.html">Schedule</a>
             <a class="mdl-navigation__link" href="">Alert</a>
@@ -66,8 +68,10 @@
             <a class="mdl-navigation__link navigation-active" href="">Demand Response</a>
             <a class="mdl-navigation__link" href="">Configuration</a>
             <a class="mdl-navigation__link" href="">Users</a>
-            
-          </nav>
+
+            </nav>
+            <div id="weather">weather</div>
+
         </div>
       </header>
  
@@ -92,7 +96,7 @@
                 </div>
             </div>
             <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--9-col">
-                <div id="demo-chart-2" style="width:100%; height:250px;"></div>
+                <div id="chart-energy-dr" style="width:100%; height:250px;"></div>
                 
             </div>
           <div class="demo-cards mdl-cell mdl-cell--9-col mdl-cell--9-col-tablet mdl-grid mdl-grid--no-spacing">
@@ -222,21 +226,6 @@
             </div>
  
 
-            <!-- <div class="demo-separator mdl-cell--1-col"></div> -->
-
-
-           <!--  <div class="demo-separator mdl-cell--1-col"></div> -->
-<!--             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
-              <div class="mdl-card__title mdl-card--expand mdl-color-text--grey-800">
-                <h2 class="mdl-card__title-text">Plug Loads</h2>
-              </div>   
-              <div class="mdl-card__supporting-text ">
-                <ul>
-                  <li> Group 1 </li>
-                  <li> Group 2 </li>
-                </ul>
-              </div>
-            </div> -->
 
         </div>
         <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-desktop">
@@ -265,94 +254,15 @@
     <script src="js/highcharts.js"></script>
     <script src="js/data.js"></script>
     <script src="js/drilldown.js"></script>
-
+    <script type="text/javascript" src="js/energy_dr.js"></script>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
 
 
     <script type="text/javascript">
 
-    // Create the chart
-    Highcharts.chart('demo-chart-2', {
-        chart: {
-            type: 'areaspline'
-        },
-        title: {
-            text: 'Total Energy Consumption'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'left',
-            verticalAlign: 'top',
-            x: 150,
-            y: 100,
-            floating: true,
-            borderWidth: 1,
-            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
-        },
-        xAxis: {
-            categories: [
-                '12a',
-                '1a',
-                '2a',
-                '3a',
-                '4a',
-                '5a',
-                '6a',
-                '7a',
-                '8a',
-                '9a',
-                '10a',
-                '11a',
-                '12p',
-                '1p',
-                '2p',
-                '3p',
-                '4p',
-                '5p',
-                '6p',
-                '7p',
-                '8p',
-                '9p',
-                '10p',
-                '11p',
-                '12p'
-            ],
-            plotBands: [{ // visualize the weekend
-                from: 14,
-                to: 18,
-                color: '#F1F8E9'
-            }]
-        },
-        yAxis: {
-            title: {
-                text: 'kWh'
-            }
-        },
-        tooltip: {
-            shared: true,
-            valueSuffix: ' kWh'
-        },
-        credits: {
-            enabled: false
-        },
-        plotOptions: {
-            areaspline: {
-                fillOpacity: 0.5
-            }
-        },
-        legend: {
-            enabled: false
-        },
-        series: [{
-            name: 'Current Energy Usage',
-            color: '#AED581',
-            data: [3, 4, 3, 5, 4, 10, 12, 13, 14, 13, 15, 14, 10, 12, 16, 17, 19, 16, 18, 15, 17, 23, 21, 21, 18]
-        }, {
-            name: 'Recommended Energy Usage',
-            color: '#8BC34A',
-            data: [2, 3, 3, 3, 2, 8, 11, 11, 12, 10, 12, 13, 7, 10, 13, 13, 15, 15, 16, 14, 13, 20, 17, 19, 17]
-        }]
-    });
-            
+ 
    
         </script>
 
