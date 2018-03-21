@@ -68,10 +68,9 @@
             header: {
               left: 'prev,next today',
               center: 'title',
-              right: 'month,agendaWeek,agendaDay'
+              right: 'month,agendaWeek'
             },
             // defaultDate: '2017-10-12',
-            navLinks: true, // can click day/week names to navigate views
             businessHours: true, // display business hours
             editable: true,
             droppable: true,
@@ -85,35 +84,29 @@
                 title: '68 °F',
                 start: '00:00:00',
                 end: '09:00:00',
-                color: '#AED581',
+                color: '#9e9e9e',
                 dow: [ 1, 2, 3, 4, 5 ] // Monday - Thursday
               },
               {
                 title: '69 °F',
                 start: '09:00:00',
-                end: '12:00:00',
-                color: '#DCE775',
-                dow: [ 1, 2, 3, 4, 5 ] // Monday - Thursday
-              },
-              {
-                title: '70 °F',
-                start: '12:00:00',
                 end: '16:00:00',
-                color: '#FFF176',
+                color: '#4caf50',
                 dow: [ 1, 2, 3, 4, 5 ] // Monday - Thursday
               },
+              
               {
                 title: '68 °F',
                 start: '16:00:00',
                 end: '23:59:59',
-                color: '#AED581',
+                color: '#9e9e9e',
                 dow: [ 1, 2, 3, 4, 5 ] // Monday - Thursday
               },
               {
                 title: '66 °F',
                 start: '00:00:00',
                 end: '23:59:59',
-                color: '#AED581',
+                color: '#9e9e9e',
                 dow: [ 6, 0 ] // Monday - Thursday
               }
               
@@ -146,7 +139,7 @@
 
 
       <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid demo-content">
+        <div class="mdl-grid demo-content margin-top-30">
           <div id='wrap'>
 
             <div id='calendar'></div>

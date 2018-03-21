@@ -105,22 +105,48 @@ img {
 .font-size-16 {
   font-size: 16px;
 }
+
+
+/* =============== Full Calendar =================*/
+
+
+#external-events {
+  /*position: fixed;*/
+/*  z-index: 2;
+*/  top: 20px;
+  /*left: 20px;*/
+  width: 150px;
+  /*padding: 0 10px;
+  border: 1px solid #ccc;
+  background: #eee;*/
+}
+
+#external-events .fc-event {
+  margin: 1em 0;
+  cursor: move;
+}
+
+
+
+
 /* Remove that awful yellow color and border from today in Schedule */
 .fc-today {
 /*  opacity: 0;
 */  border: none;
 }
 
+
+
 /* Styling for each event from Schedule */
-.fc-time-grid-event.fc-v-event.fc-event {
-  border-radius: 4px;
-  border: none;
-  padding: 5px;
+.fc-event {
+  border-radius: 20px !important;
+  border: none !important;
+  padding: 10px;
 /*  opacity: .65;*/
-  left: 5% !important;
-  right: 5% !important;
   margin:1px;
+  text-align: center;
 }
+
 
 /* Remove the header border from Schedule */
 .fc td, .fc th {
@@ -161,13 +187,13 @@ img {
 
 
 #calendar {
-  margin: 2rem;
+  /*margin: 2rem;*/
 }
 
 #calendar .fc-event{
     background-color: #00BBD6;
-    color: rgba(0, 0, 0, 0.8);
-    border: 1px solid #00BBD6;
+/*    color: rgba(0, 0, 0, 0.8);
+*/    border: 1px solid #00BBD6;
 }
 
 #calendar.fc-unthemed td.fc-today {
