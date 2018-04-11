@@ -1,3 +1,34 @@
+.nav-text {
+  align-items:center;
+  font-size:14px;
+  font-weight:500 !important;
+  height:64px !important;
+  line-height:64px;
+  opacity:0.87;
+  padding:0px 24px;
+}
+
+nav .brand-logo {
+    display: block;
+    position: relative !important;
+    font-size: 20px !important;
+    line-height: 1;
+    letter-spacing: .02em;
+    font-weight: 400 !important;
+    height:64px !important;
+    box-sizing: border-box;
+}
+
+.container-fluid{
+    padding: 0 40px 0 80px !important;
+
+}
+
+nav ul li {
+  margin: 0 !important;
+}
+
+
 .floorplan-image {
     position: absolute;
     width: inherit;
@@ -7,6 +38,19 @@
 .margin-left-30 {
   margin-left: 30px;
 }
+
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+.margin-left-25 {
+  margin-left: 25px;
+}
+
+.width-12-col{
+  width: 100% !important;
+}
+
 .mdl-list_item-sub-title-2 {
       text-align: right !important;
     margin-top: -18px !important;

@@ -1,18 +1,10 @@
-$(document).ready(function() {
+window.onload = function(){
+  $('.timepicker').timepicker();
 
-    $( "#hvac" ).click(function() {
- 
-        if ( $( this ).hasClass( "protected" ) ) {
-     
-            console.log("checked");   
-     
-        }
- 
-    });
 
-    myfunction function() {
-            
-    });
+}
+
+  
     
 
-});
+
