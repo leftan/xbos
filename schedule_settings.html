@@ -20,7 +20,6 @@
     <!-- Full Calendar -->
     <link href='css/fullcalendar.css' rel='stylesheet' />
     <link href='css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
-    <link href="css/getmdl-select.min.css" rel="stylesheet">
 
   </head>
   <body>
@@ -53,7 +52,7 @@
           <div class="section">
             <div class="row">
               <div class="input-field col s8">
-                <input placeholder="Such as close, open, day, night, etc." id="schedule_type" type="text" class="validate">
+                <input placeholder="Such as closed, open, day, night, etc." id="schedule_type" type="text" class="validate">
                 <label for="schedule_type">Schedule Type</label>
               </div>
             </div>
@@ -69,14 +68,14 @@
                 <div class="section">
                   <p class="range-field">
                     <label for="schedule_hsp">Heating Setpoint</label>
-                    <input type="range" id="schedule_hsp" min="0" max="100" />
+                    <input type="range" id="schedule_hsp" min="35" max="74" />
                   </p>
                 </div>
                 <div class="divider"></div>
                 <div class="section">
                   <p class="range-field">
                     <label for="schedule_hsp">Cooling Setpoint</label>
-                    <input type="range" id="schedule_hsp" min="0" max="100" />
+                    <input type="range" id="schedule_hsp" min="74" max="95" />
                   </p>
                 </div>
               </div>
