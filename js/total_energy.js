@@ -1,9 +1,63 @@
 // Create the chart
+
+$(function() {
+
+
+  $.ajax({
+    url: 'http://localhost:5000/api/energy/year/in/month',
+    complete: function(json) {
+      data = JSON.parse(json.responseText);
+      console.log(data)
+      energyData = data[Object.keys(data)[0]]
+      console.log(energyData)
+      var energyDataArray = []
+      for (var key in energyData) {
+        timestamp = key
+        reading = energyData[key]
+        // console.log(reading)
+        var date = new Date(parseInt(timestamp));
+        var month = date.getMonth();
+        var monthStr = {0: 'Jan', 1: 'Feb', 2:'Mar', 3:'Apr', 4:'May', 5:'Jun', 6:'Jul', 7:'Aug', 8:'Sep', 9:'Oct', 10:'Nov', 11:'Dec'}
+        energyDataArray.push({
+            name: monthStr[month],
+            y: reading,
+            drilldown: month
+        })
+      }
+      console.log(energyDataArray)
+      // set some variable to host data
+      // var arrayString = [],
+      //   year_list = [],
+      //   array_final = []
+
+      // $.each(data[1], function(i, data) {
+      //   //Store indicator name
+      //   country_name = data.country.value;
+      //   // Store indicator label
+      //   indicatorName = data.indicator.value;
+      //   // fill the date array
+      //   year_list.push(data.date);
+      //   // fill the string data array 
+      //   arrayString.push(data.value);
+      // });
+
+      // // querry send string that we need to convert into numbers
+      // for (var i = 0; i < arrayString.length; i++) {
+      //   if (arrayString[i] != null) {
+      //     array_final.push(parseFloat(arrayString[i]))
+      //   } else {
+      //     array_final.push(null)
+      //   };
+      // }
+
+
+console.log("chart-total-energy")
     Highcharts.chart('chart-total-energy', {
         chart: {
             type: 'column',
             events: {
                 load: function(event){
+                    console.log(this.series[0].data[0])
                     this.series[0].data[0].doDrilldown();
                 }  
             }
@@ -40,62 +94,67 @@
             headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
             pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> <br/>'
         },
-
         series: [{
-            name: '2017',
-            colorByPoint: false,
-            color: '#7cb342', 
+        name: 'Energy data',
+        color: '#7cb342',
+        data: energyDataArray.reverse()
+    }],
 
-            data: [{
-                name: 'Jan',
-                y:25263.33009,
-                drilldown: 'Jan'
-            },{
-                name: 'Feb',
-                y:22673.46316,
-                drilldown: 'Feb'
-            },{
-                name: 'Mar',
-                y:21244.61357,
-                drilldown: 'Mar'
-            },{
-                name: 'Apr',
-                y:18713.95301,
-                drilldown: 'Apr'
-            },{
-                name: 'May',
-                y:25557.07887,
-                drilldown: 'May'
-            },{
-                name: 'Jun',
-                y:24803.11912,
-                drilldown: 'Jun'
-            },{
-                name: 'Jul',
-                y:28798.4518,
-                drilldown: 'Jul'
-            },{
-                name: 'Aug',
-                y:22806.26745,
-                drilldown: 'Aug'
-            },{
-                name: 'Sep',
-                y:21627.07562,
-                drilldown: 'Sep'
-            },{
-                name: 'Oct',
-                y:25065.53357,
-                drilldown: 'Oct'
-            },{
-                name: 'Nov',
-                y:25698.55368,
-                drilldown: 'Nov'
-            },{
-                name: 'Dec',
-                y:25662.88228,
-                drilldown: 'Dec'
-            }]
-        }],
+        // series: [{
+        //     name: '2017',
+        //     colorByPoint: false,
+        //     color: '#7cb342', 
+
+        //     data: [{
+        //         name: 'Jan',
+        //         y:25263.33009,
+        //         drilldown: 'Jan'
+        //     },{
+        //         name: 'Feb',
+        //         y:22673.46316,
+        //         drilldown: 'Feb'
+        //     },{
+        //         name: 'Mar',
+        //         y:21244.61357,
+        //         drilldown: 'Mar'
+        //     },{
+        //         name: 'Apr',
+        //         y:18713.95301,
+        //         drilldown: 'Apr'
+        //     },{
+        //         name: 'May',
+        //         y:25557.07887,
+        //         drilldown: 'May'
+        //     },{
+        //         name: 'Jun',
+        //         y:24803.11912,
+        //         drilldown: 'Jun'
+        //     },{
+        //         name: 'Jul',
+        //         y:28798.4518,
+        //         drilldown: 'Jul'
+        //     },{
+        //         name: 'Aug',
+        //         y:22806.26745,
+        //         drilldown: 'Aug'
+        //     },{
+        //         name: 'Sep',
+        //         y:21627.07562,
+        //         drilldown: 'Sep'
+        //     },{
+        //         name: 'Oct',
+        //         y:25065.53357,
+        //         drilldown: 'Oct'
+        //     },{
+        //         name: 'Nov',
+        //         y:25698.55368,
+        //         drilldown: 'Nov'
+        //     },{
+        //         name: 'Dec',
+        //         y:25662.88228,
+        //         drilldown: 'Dec'
+        //     }]
+        // }],
         drilldown: {
             series: [{
                 name: 'Jan',
@@ -1621,3 +1680,6 @@
             }]
         }
     });
+  }
+});
+});
